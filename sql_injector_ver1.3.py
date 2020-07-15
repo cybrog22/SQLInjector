@@ -26,7 +26,7 @@ def createSQLQuery(sql_statement, idSize, path_in):
 
 
     if size >= 1000:
-        chunks = int(floor(size / 1000)) + 2
+        chunks = int(floor(size / 1000)) + 1
     else:
         chunks = 2
 
@@ -71,7 +71,7 @@ def createSQLQuery(sql_statement, idSize, path_in):
                             itr2 = itr2 + 1
                     
                     
-        if j != 0 and j != chunks - 1:
+        if j != 0 and j != chunks-1:
             final_query1[j].append(") union all \n")
         elif j == chunks-1:
             final_query1[j].append("));")
